@@ -1,0 +1,633 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+header {
+  &.header {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in;
+
+    &.sticky-animated {
+      .main-nav {
+        padding: 5px 0;
+        transition: all 0.3s ease-in;
+
+        .navbar  {
+          .navbar-brand {
+            img {
+              height: 50px;
+              transition: all 0.3s ease-in;
+            }
+          }
+
+          ul {
+            &.navbar-nav {
+              li {
+                 &.nav-item {
+                  a {
+                    font-size: 13px;
+                    transition: all 0.3s ease-in;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .top-nav {
+      height: 32px;
+      background-color: #000042;
+
+      .wrapper {
+        @include flexbox;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 5px 0;
+
+        .top-desc {
+          margin: 0;
+          color: #fff;
+
+          .desc {
+            position: relative;
+            top: -5px;
+            font-size: 12px;
+          }
+
+          a {
+            color: #fff;
+
+            &:first-child {
+              // margin-right: 15px;
+            }
+
+            @include on-event {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+
+    .main-nav {
+      position: relative;
+      z-index: 2;
+      padding: 15px 0;
+      @include boxshadow(0px 4px 16px 0px rgba(0,0,66,0.16));
+      background-color: $white;
+      transition: all 0.3s ease-in;
+
+      .navbar  {
+        padding: 0;
+
+        .navbar-brand {
+          img {
+            width: auto;
+            height: 40px;
+            transition: all 0.3s ease-in;
+          }
+        }
+
+        ul {
+          &.navbar-nav {
+            li {
+              &:after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                display: block;
+                width: 0;
+                height: 2px;
+                background: $color-brand;
+                transition: width .3s;
+              }
+
+              &:hover {
+                &:after {
+                  width: 100%;
+                }
+              }
+
+              &.nav-item {
+                position: relative;
+                margin-left: 30px;
+
+                &.dropdown {
+                  .dropdown-item {
+                    padding: 6px 25px;
+                    color: $text-color;
+
+                    &:hover {
+                      background: $color-brand;
+                      color: $white;
+                    }
+                  }
+                }
+
+                a {
+                  padding: 12px 0px;
+                  color: $color-brand;
+                  font-family: "Open Sans";
+                  font-size: 14px;
+                  font-weight: 800;
+
+                  .icon {
+                    position: relative;
+                    top: 3px;
+                    margin-right: 5px;
+                    font-size: 18px;
+                    line-height: 15px;
+                  }
+
+                  &:hover {
+                    color: $color-brand;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(lg-down) {
+      .mid-nav {
+
+        .wrapper {
+
+          .option-wrapper {
+
+            ul {
+
+              li {
+
+                &.search-product {
+
+                  form {
+                    .search-holder {
+
+                      .search-field {
+                      }
+
+                      .icon-search-wrapper {
+
+                        .holder {
+
+                          i {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                a {
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .main-nav {
+
+        .navbar  {
+
+          .navbar-brand {
+            img {
+            }
+          }
+
+          ul {
+            &.navbar-nav {
+              li {
+                &:after {
+                }
+
+                &:hover {
+                  &:after {
+                  }
+                }
+
+                &.nav-item {
+                  margin-left: 25px;
+
+                  &.dropdown {
+                    .dropdown-item {
+                    }
+                  }
+
+                  a {
+                      padding: 12px 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(md-down) {
+      .top-nav {
+
+        .wrapper {
+          display: block;
+          text-align: center;
+
+          .option-wrapper {
+
+            ul {
+
+              li {
+
+                &.search-product {
+
+                  form {
+                    .search-holder {
+
+                      .search-field {
+                      }
+
+                      .icon-search-wrapper {
+
+                        .holder {
+
+                          i {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                a {
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .main-nav {
+        padding: 5px 0;
+
+        .navbar  {
+
+          .container {
+            display: block;
+            padding: 0 15px;
+
+            .row-holder {
+              .col-holder {
+                &.basket-contact {
+                  @include flexbox;
+
+                  span {
+                    margin: auto 0;
+                    margin-right: 15px;
+                    font-size: 26px;
+                  }
+
+                }
+
+                &.logo {
+                  .navbar-brand {
+                    margin: 0;
+                    padding: 0;
+
+                    img {
+                      width: 100%;
+                    }
+                  }
+                }
+
+                &.button {
+                  @include flexbox;
+                  text-align: right;
+
+                  .search {
+                    margin: auto 0 auto auto;
+
+                    a {
+                      display: inline-block;
+                      margin-right: 15px;
+                      color: #000;
+
+                      @include on-event {
+                        text-decoration: none;
+                      }
+
+                      .btn-expand-search {
+                        position: relative;
+                        top: 2px;
+                        font-weight: bold;
+                        font-size: 26px;
+                      }
+                    }
+
+                    .search-form {
+                      position: fixed;
+                      width: 100%;
+                      top: 32px;
+                      left: 0px;
+                      background: #fff;
+
+                      .container {
+                        @include flexbox;
+
+                        input {
+                          width: 100%;
+                          border: 0;
+                          font-size: 15px;
+                          padding: 14px 20px;
+                        }
+
+                        a {
+                          @include flexbox;
+                          margin: 0;
+
+                          span {
+                            margin: auto;
+                            font-weight: bold;
+                            font-size: 26px;
+                            color: #959595;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .search,
+                  button {
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+          }
+
+
+
+          ul {
+            &.navbar-nav {
+              li {
+                &:after {
+                }
+
+                &:hover {
+                  &:after {
+                  }
+                }
+
+                &.nav-item {
+                  li {
+
+                  }
+
+                  &.dropdown {
+                    .dropdown-item {
+                    }
+                  }
+
+                  a {
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(sm-down) {
+      .main-nav {
+        padding: 0;
+
+        .wrapper {
+
+          .option-wrapper {
+
+            ul {
+
+              li {
+
+                &.search-product {
+                  display: none;
+
+                  form {
+                    .search-holder {
+
+                      .search-field {
+                      }
+
+                      .icon-search-wrapper {
+
+                        .holder {
+
+                          i {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                a {
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .main-nav {
+        .container {
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+
+        .navbar  {
+          .container {
+            .row-holder {
+              .col-holder {
+                &.basket-contact {
+
+                  span {
+                    font-size: 21px;
+                  }
+
+                }
+
+                &.logo {
+                  .navbar-brand {
+
+                    img {
+                    }
+                  }
+                }
+
+                &.button {
+
+                  .search {
+
+                    a {
+
+                      @include on-event {
+                      }
+
+                      .btn-expand-search {
+                        font-size: 21px;
+                      }
+                    }
+
+                    .search-form {
+
+                      .container {
+
+                        input {
+                        }
+
+                        a {
+
+                          span {
+                            font-size: 21px;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  .search,
+                  button {
+                  }
+                }
+              }
+            }
+          }
+          .navbar-brand {
+            img {
+              height: 50px;
+            }
+          }
+
+          ul {
+            &.navbar-nav {
+              li {
+                &:after {
+                }
+
+                &:hover {
+                  &:after {
+                  }
+                }
+
+                &.nav-item {
+                  margin-left: 0;
+
+                  &.dropdown {
+                    .dropdown-item {
+                    }
+                  }
+
+                  a {
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include respond-to(xs) {
+      .mid-nav {
+
+        .wrapper {
+
+          .option-wrapper {
+
+            ul {
+
+              li {
+                margin-left: 20px;
+
+                &.search-product {
+
+                  form {
+                    .search-holder {
+
+                      .search-field {
+                      }
+
+                      .icon-search-wrapper {
+
+                        .holder {
+
+                          i {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                a {
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .main-nav {
+        .container {
+        }
+
+        .navbar  {
+
+          .navbar-brand {
+            img {
+            }
+          }
+
+          ul {
+            &.navbar-nav {
+              li {
+                &:after {
+                }
+
+                &:hover {
+                  &:after {
+                  }
+                }
+
+                &.nav-item {
+
+                  &.dropdown {
+                    .dropdown-item {
+                    }
+                  }
+
+                  a {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
